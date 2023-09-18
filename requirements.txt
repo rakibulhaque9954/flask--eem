@@ -5,7 +5,7 @@ libclang==11.1.0
 Markdown==3.3.3
 MarkupSafe==1.1.1
 mpmath==1.1.0
-numpy==1.18.5
+numpy==1.21.6
 oauthlib==3.1.1
 onnxruntime<=1.14.1
 opencv-python==4.3.0.38
