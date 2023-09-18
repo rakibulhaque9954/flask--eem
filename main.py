@@ -31,8 +31,8 @@ def generate_frames():
             face = frame[y:y + h, x:x + w]
             input_size = (256, 256)
             face = cv2.resize(face, input_size)
-            face_tensor = tf.convert_to_tensor(face, dtype=tf.float32)
-            face_tensor = np.expand_dims(face_tensor, axis=0)
+            face_array = np.array(face, dtype=np.float32)
+            face_tensor = np.expand_dims(face_array, axis=0)
             emotion_prediction = m.run(output_names, {'input_image': face_tensor})
             predicted_class = np.argmax(emotion_prediction)
             predicted_emotion = CLASS_NAMES[predicted_class]
