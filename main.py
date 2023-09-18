@@ -2,7 +2,7 @@ from flask import Flask, render_template, Response
 import cv2
 import numpy as np
 import onnxruntime as rt
-import tensorflow as tf
+
 
 app = Flask(__name__)
 
