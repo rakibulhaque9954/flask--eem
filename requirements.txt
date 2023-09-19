@@ -26,7 +26,7 @@ mpmath==1.1.0
 numpy==1.24.3
 oauthlib==3.2.2
 onnxruntime==1.15.1
-opencv-python==4.8.0.76
+opencv-python-headless==4.8.0.76
 opt-einsum==3.3.0
 packaging==23.1
 protobuf==4.24.3
