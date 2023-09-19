@@ -1,8 +1,10 @@
 from flask import Flask, render_template, Response
+import os
+os.environ["OPENCV_VIDEOIO_MSMF_ENABLE_HW_TRANSFORMS"] = "0"
 import cv2
 import numpy as np
 import onnxruntime as rt
-# import os
+#
 #
 # # Read the PYTHON_VERSION environment variable
 # python_version = os.environ.get("PYTHON_VERSION", "3.8")  # Default to 3.8 if not set
@@ -33,7 +35,7 @@ face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 # Function to generate frames with predictions
 def generate_frames():
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
     while True:
         ret, frame = cap.read()
         gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
