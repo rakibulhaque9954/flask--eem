@@ -45,12 +45,13 @@ def generate_frames():
         if not cap.isOpened():
             print(f"Camera {camera_index} not found.")
             camera_index += 1
-            if camera_index > 10:  # You can adjust the range of camera indices to check
+            if camera_index > 100:  # You can adjust the range of camera indices to check
                 print("No cameras found.")
                 break
         else:
             print(f"Camera {camera_index} is available.")
             break
+    cap = cv2.VideoCapture(0)
     while True:
         ret, frame = cap.read()
         gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
