@@ -35,7 +35,22 @@ face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 # Function to generate frames with predictions
 def generate_frames():
-    cap = cv2.VideoCapture(cv2.CAP_V4L2)
+    camera_index = 0  # Starting camera index
+
+    while True:
+        # Create a VideoCapture object for the current camera index
+        cap = cv2.VideoCapture(camera_index)
+
+        # Check if the camera is opened successfully
+        if not cap.isOpened():
+            print(f"Camera {camera_index} not found.")
+            camera_index += 1
+            if camera_index > 10:  # You can adjust the range of camera indices to check
+                print("No cameras found.")
+                break
+        else:
+            print(f"Camera {camera_index} is available.")
+            break
     while True:
         ret, frame = cap.read()
         gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
