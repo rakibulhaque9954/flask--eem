@@ -2,18 +2,18 @@ from flask import Flask, render_template, Response
 import cv2
 import numpy as np
 import onnxruntime as rt
-import os
-
-# Read the PYTHON_VERSION environment variable
-python_version = os.environ.get("PYTHON_VERSION", "3.8")  # Default to 3.8 if not set
-
-# Create a virtual environment with the specified Python version
-python_command = f"python{python_version}"
-os.system(f"{python_command} -m venv venv")
-
-# Activate the virtual environment
-if os.name == "posix":  # For Unix-based systems (Linux, macOS)
-    os.system("source venv/bin/activate")
+# import os
+#
+# # Read the PYTHON_VERSION environment variable
+# python_version = os.environ.get("PYTHON_VERSION", "3.8")  # Default to 3.8 if not set
+#
+# # Create a virtual environment with the specified Python version
+# python_command = f"python{python_version}"
+# os.system(f"{python_command} -m venv venv")
+#
+# # Activate the virtual environment
+# if os.name == "posix":  # For Unix-based systems (Linux, macOS)
+#     os.system("source venv/bin/activate")
 
 
 app = Flask(__name__)
